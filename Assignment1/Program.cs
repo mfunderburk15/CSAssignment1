@@ -41,6 +41,44 @@ namespace Assignment1
                 Console.WriteLine("square image");
             }
 
+            /*
+               Your job is to write a program for a speed camera.
+               For simplicity, ignore the details such as camera, sensors, etc and focus purely on the logic.
+               Write a program that asks the user to enter the speed limit. Once set, the program asks for the speed of a car.
+               If the user enters a value less than the speed limit, program should display Ok on the console.
+               If the value is above the speed limit, the program should calculate the number of demerit points.
+               For every 5km/hr above the speed limit, 1 demerit points should be incurred and displayed on the console.
+               If the number of demerit points is above 12, the program should display License Suspended.
+             */
+
+            int speedLimit = 45;
+            Console.WriteLine(String.Format("The speed limit is {0}mph", speedLimit));
+            int speed = 46;
+            Console.WriteLine(String.Format("Your speed was {0}mph", speed));
+            int demerit = 0;
+            if (speed <= speedLimit)
+            {
+                Console.WriteLine("OK");
+            }
+            else
+            {
+                int occurance = (speed - speedLimit) / 5;
+                demerit += occurance;
+                Console.WriteLine(String.Format("you have recieved {0} demerits", demerit));
+            }
+            if (demerit > 12)
+            {
+                Console.WriteLine("Say goodbye to your license");
+            }
+            else if (demerit == 0)
+            {
+                
+            }
+            else
+            {
+                int warning = 12 - demerit;
+                Console.WriteLine(String.Format("Be careful only {0} more demerits before you say goodbye to your license", warning));
+            }
         }
     }
 }
